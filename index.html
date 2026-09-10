@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipsy — Research Archive</title>
+<meta name="description" content="Pipsy is a personal research archive of tagged notes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <h1 class="wordmark">Pipsy</h1>
+    <p class="tagline">A personal research archive of tagged notes</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="controls" aria-label="Search and filter notes">
+    <div class="search-row">
+      <label class="visually-hidden" for="search-input">Search notes</label>
+      <input type="search" id="search-input" placeholder="Search by title, summary, or keyword…" autocomplete="off">
+      <p class="count" id="result-count" aria-live="polite"></p>
+    </div>
+
+    <div class="filter-groups" id="filter-groups">
+      <div class="filter-group">
+        <span class="filter-label">Year</span>
+        <div class="chip-row" id="year-chips" data-filter-key="year"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Industry</span>
+        <div class="chip-row" id="industry-chips" data-filter-key="industry"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Geography</span>
+        <div class="chip-row" id="geography-chips" data-filter-key="geography"></div>
+      </div>
+      <button type="button" id="clear-filters" class="clear-btn" hidden>Clear all filters</button>
+    </div>
+  </section>
+
+  <section class="grid" id="note-grid" aria-label="Research notes">
+
+    <!-- ============================================================
+         NOTE CARD TEMPLATE — copy one of these <article> blocks to
+         add a new note. Fields to edit:
+           data-year        e.g. "2015"
+           data-industry    e.g. "automotive" | "fmcg" | "tech"
+           data-geography   e.g. "india" | "usa" | "global"
+           data-search      lowercase keywords the search box matches
+           data-author      byline name
+           data-date        human-readable date, e.g. "12 Mar 2015"
+         Inside: .card-title, .card-summary (short, shown on the card)
+         and a <template class="card-body"> holding the FULL text
+         shown in the pop-up when the card is clicked. Use <p> tags.
+         ============================================================ -->
+
+    <article class="note-card"
+      data-year="2015"
+      data-industry="fmcg"
+      data-geography="india"
+      data-author="R. Krishnan"
+      data-date="12 Mar 2015"
+      data-search="territory mapping distribution sales fmcg india route to market rtm van sales beat plan secondary sales">
+      <div class="card-badges">
+        <span class="badge badge-industry">FMCG</span>
+        <span class="badge badge-geography">India</span>
+        <span class="badge badge-year">2015</span>
+      </div>
+      <h2 class="card-title">Territory Mapping in Indian FMCG Distribution</h2>
+      <p class="card-byline">R. Krishnan · 12 Mar 2015</p>
+      <p class="card-summary">A look at how regional FMCG distributors carved sales territories in the mid-2010s, and why the shift from tenure-based beat plans to demand-density mapping changed how field sales teams were sized and compensated.</p>
+      <template class="card-body">
+        <p>[Placeholder text — replace with your research.] Through the early 2010s, most Indian FMCG distributors assigned sales territories the same way their predecessors had for decades: by geography and tenure, with senior salesmen inheriting the busiest routes regardless of how demand had actually shifted. By 2015, a handful of larger distribution houses began experimenting with demand-density mapping — using outlet-level sales history to redraw "beats" (daily sales routes) around actual purchase volume rather than road distance.</p>
+        <p>This note sketches out the mechanics of a beat plan: how many outlets a salesman on foot versus a van-based salesman could realistically cover in a day, how secondary sales data (distributor-to-retailer, as opposed to company-to-distributor) was used to flag under-served pockets, and why frequency of visit mattered more than territory size for perishable and high-turnover categories.</p>
+        <p>Open questions for further research: how did the shift affect salesman compensation structures built around fixed territories, and what happened to relationship-based selling once beats were redrawn purely on volume?</p>
+      </template>
+    </article>
+
+    <article class="note-card"
+      data-year="2008"
+      data-industry="automotive"
+      data-geography="global"
+      data-author="R. Krishnan"
+      data-date="26 Mar 2008"
+      data-search="tata motors jaguar land rover acquisition ford automotive turnaround corporate history luxury brand">
+      <div class="card-badges">
+        <span class="badge badge-industry">Automotive</span>
+        <span class="badge badge-geography">Global</span>
+        <span class="badge badge-year">2008</span>
+      </div>
+      <h2 class="card-title">The Tata–Jaguar Land Rover Acquisition: A Turnaround Case Study</h2>
+      <p class="card-byline">R. Krishnan · 26 Mar 2008</p>
+      <p class="card-summary">Notes on Tata Motors' $2.3B purchase of Jaguar and Land Rover from Ford, made at the peak of a global credit crunch, and the operational bets that turned two loss-making British marques profitable within a few years.</p>
+      <template class="card-body">
+        <p>[Placeholder text — replace with your research.] In March 2008, Tata Motors completed its acquisition of Jaguar and Land Rover from Ford Motor Company for roughly $2.3 billion — a deal struck months before the global financial crisis made credit for large acquisitions far harder to come by. Ford had bought Jaguar in 1989 and Land Rover in 2000, and by the mid-2000s both brands were losing money under a parent company distracted by its own restructuring.</p>
+        <p>This note tracks the early operating decisions that are usually credited with the turnaround: giving JLR's UK engineering and design teams operational independence rather than folding them into Tata's existing structure, continued investment in new platforms even through the 2009 downturn, and a deliberate push into the Chinese market that Ford had underexploited.</p>
+        <p>Worth researching further: how the deal was financed given the timing, and how much of the eventual profitability is attributable to product decisions versus the broader luxury SUV market recovery post-2010.</p>
+      </template>
+    </article>
+
+    <article class="note-card"
+      data-year="1971"
+      data-industry="tech"
+      data-geography="usa"
+      data-author="R. Krishnan"
+      data-date="15 Nov 1971"
+      data-search="intel 4004 microprocessor mainframe history semiconductor silicon valley computing hardware">
+      <div class="card-badges">
+        <span class="badge badge-industry">Technology</span>
+        <span class="badge badge-geography">USA</span>
+        <span class="badge badge-year">1971</span>
+      </div>
+      <h2 class="card-title">From Mainframes to Microprocessors: Intel's 1971 Pivot</h2>
+      <p class="card-byline">R. Krishnan · 15 Nov 1971</p>
+      <p class="card-summary">How a calculator contract for a Japanese client led Intel to build the 4004, the first commercial single-chip microprocessor, and why the company almost didn't realize what it had made.</p>
+      <template class="card-body">
+        <p>[Placeholder text — replace with your research.] In 1969, Japanese calculator maker Busicom commissioned Intel to design a set of chips for a new line of calculators. Rather than building the twelve custom chips Busicom had specified, Intel engineer Ted Hoff proposed a more general design: a single programmable logic chip that could be configured in software to perform different calculator functions, paired with memory chips.</p>
+        <p>The result, released commercially in November 1971 as the Intel 4004, is widely regarded as the first commercially available single-chip microprocessor. It was not originally built with general-purpose computing in mind — Intel's leadership at the time saw the company's future in memory chips, not processors, and it took internal negotiation for Intel to buy back the rights to market the 4004 to other customers, since Busicom's original contract gave them exclusivity.</p>
+        <p>This note is a starting point for tracing how the 4004's architecture influenced the 8008 and 8080, and eventually the x86 line that would define desktop computing for the next four decades.</p>
+      </template>
+    </article>
+
+  </section>
+
+  <p class="empty-state" id="empty-state" hidden>No notes match your filters. Try clearing a filter or adjusting your search.</p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Pipsy — a private research journal. Add new notes by copying a card block in <code>index.html</code>.</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modal-overlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    <div class="modal-badges" id="modal-badges"></div>
+    <h2 class="modal-title" id="modal-title"></h2>
+    <p class="modal-byline" id="modal-byline"></p>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
