@@ -21,6 +21,13 @@
 
 <main class="wrap">
 
+  <div class="tabs" role="tablist" aria-label="Archive sections">
+    <button type="button" class="tab-btn active" id="tab-notes" role="tab" aria-selected="true" aria-controls="panel-notes" data-tab="notes">Notes</button>
+    <button type="button" class="tab-btn" id="tab-wishlist" role="tab" aria-selected="false" aria-controls="panel-wishlist" data-tab="wishlist">Wishlist</button>
+  </div>
+
+  <div class="tab-panel" id="panel-notes" role="tabpanel" aria-labelledby="tab-notes">
+
   <section class="controls" aria-label="Search and filter notes">
     <div class="search-row">
       <label class="visually-hidden" for="search-input">Search notes</label>
@@ -131,11 +138,181 @@
 
   <p class="empty-state" id="empty-state" hidden>No notes match your filters. Try clearing a filter or adjusting your search.</p>
 
+  </div>
+
+  <div class="tab-panel" id="panel-wishlist" role="tabpanel" aria-labelledby="tab-wishlist" hidden>
+
+  <section class="controls" aria-label="Search and filter wishlist items">
+    <div class="search-row">
+      <label class="visually-hidden" for="wishlist-search-input">Search wishlist</label>
+      <input type="search" id="wishlist-search-input" placeholder="Search by title, summary, or keyword…" autocomplete="off">
+      <p class="count" id="wishlist-result-count" aria-live="polite"></p>
+    </div>
+
+    <div class="filter-groups" id="wishlist-filter-groups">
+      <div class="filter-group">
+        <span class="filter-label">Year</span>
+        <div class="chip-row" id="wishlist-year-chips" data-filter-key="year"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Industry</span>
+        <div class="chip-row" id="wishlist-industry-chips" data-filter-key="industry"></div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Geography</span>
+        <div class="chip-row" id="wishlist-geography-chips" data-filter-key="geography"></div>
+      </div>
+      <button type="button" id="wishlist-clear-filters" class="clear-btn" hidden>Clear all filters</button>
+    </div>
+  </section>
+
+  <section class="grid" id="wishlist-grid" aria-label="Wishlist items">
+
+    <article class="note-card"
+      data-year="2026"
+      data-industry="tech"
+      data-geography="global"
+      data-author="R. Krishnan"
+      data-date="12 Sep 2026"
+      data-search="ai course roadmap curriculum machine learning transformers attention diffusion llm agents mcp hardware semiconductors economics geopolitics wishlist to study">
+      <div class="card-badges">
+        <span class="badge badge-industry">Technology</span>
+        <span class="badge badge-geography">Global</span>
+        <span class="badge badge-year">2026</span>
+      </div>
+      <h2 class="card-title">A First-Principles AI Curriculum, From Attention Math to Geopolitics</h2>
+      <p class="card-byline">R. Krishnan · 12 Sep 2026</p>
+      <p class="card-summary">A 16-session course outline came across my desk, structured as a first-principles path through the entire AI stack — the math underneath transformers and diffusion, the frontier model landscape, agent engineering, semiconductor supply chains, and the economics and geopolitics tying it together. Logging it here as a wishlist item: worth actually working through, not just bookmarking.</p>
+      <template class="card-body">
+        <p>A 16-session course roadmap crossed my feed recently, and it's dense enough to be worth logging rather than losing in a browser tab. It bills itself as a "first-principles learning path" and mostly earns that description — it starts from bigrams and next-token prediction before it will let you near a transformer, and it doesn't stop at model architecture: by the last few sessions you're in chip lithography, datacenter economics, and export controls. Very few syllabi connect attention math to CoWoS packaging in one arc. Filing it here as something to actually work through, three-line summary per session below.</p>
+
+        <h3>1. Attention &amp; Autoregression</h3>
+        <ul>
+          <li>Starts from the simplest language models — bigrams and Markov chains — before building up to next-token prediction as the task underlying modern LLMs.</li>
+          <li>Introduces embeddings and the query-key-value mechanism that lets a model weigh which prior tokens matter most.</li>
+          <li>Covers the self-attention math itself: how scaled dot products turn a sequence into context-aware representations.</li>
+        </ul>
+
+        <h3>2. Latent Spaces &amp; Diffusion</h3>
+        <ul>
+          <li>Covers autoencoders and variational autoencoders as ways of compressing data into a lower-dimensional latent space.</li>
+          <li>Explains diffusion models as a generative process that learns to reverse gradual noising.</li>
+          <li>Frames both as tools for "world modeling" — learning compressed representations of complex data distributions.</li>
+        </ul>
+
+        <h3>3. Frontier LLMs: West</h3>
+        <ul>
+          <li>Surveys the architectural paths taken by GPT, Claude, and Grok as competing approaches to frontier-scale models.</li>
+          <li>Covers scaling laws — how performance predictably improves with more data, parameters, and compute.</li>
+          <li>Looks at multimodality as the next frontier beyond pure text generation.</li>
+        </ul>
+
+        <h3>4. East Asian Frontier Models</h3>
+        <ul>
+          <li>Surveys Qwen, DeepSeek, Kimi, and MiniMax as the leading models coming out of Chinese labs.</li>
+          <li>Covers reasoning-focused reinforcement learning as a distinguishing technique among these models.</li>
+          <li>Compares benchmark performance to contextualize how competitive the field has become.</li>
+        </ul>
+
+        <h3>5. Prompt Engineering &amp; Tool APIs</h3>
+        <ul>
+          <li>Covers prompt design as a reliability problem, not just phrasing — including the token overhead it introduces.</li>
+          <li>Introduces tool and function calling as the mechanism that lets models act outside their own text generation.</li>
+          <li>Covers code-to-markdown workflows as a practical pattern for structuring model output.</li>
+        </ul>
+
+        <h3>6. Context Engineering &amp; Memory</h3>
+        <ul>
+          <li>Covers sliding-window and pruning techniques for managing what a model can and can't see at any point.</li>
+          <li>Introduces "context rot" — the degradation of usefulness as a context window fills up.</li>
+          <li>Covers persistent memory design for agents that need to operate across long sessions.</li>
+        </ul>
+
+        <h3>7. Harness Engineering &amp; Sandboxing</h3>
+        <ul>
+          <li>Covers secure execution environments as the substrate agents need to run code safely.</li>
+          <li>Introduces auto-debugging and self-correction loops that let an agent test and fix its own output.</li>
+          <li>Frames the "harness" as the scaffolding around a model that turns it into a reliable tool.</li>
+        </ul>
+
+        <h3>8. Autonomous Execution Loops</h3>
+        <ul>
+          <li>Introduces a six-part architecture for how an autonomous agent plans, acts, and evaluates in a loop.</li>
+          <li>Covers branching — letting an agent explore multiple solution paths before committing to one.</li>
+          <li>Covers benchmarking and self-improvement as ways an agent's loop gets evaluated and refined over time.</li>
+        </ul>
+
+        <h3>9. MCP &amp; Unified Tooling</h3>
+        <ul>
+          <li>Covers the Model Context Protocol as a standard for exposing tools to models in a consistent way.</li>
+          <li>Covers building custom MCP servers to wrap local or proprietary capabilities.</li>
+          <li>Covers safely exposing both local and remote tools through a single interface.</li>
+        </ul>
+
+        <h3>10. Swarm Graph Engineering</h3>
+        <ul>
+          <li>Covers multi-agent state graphs as a way of coordinating several models working on one task.</li>
+          <li>Covers the coordination and latency tradeoffs that show up once multiple agents talk to each other.</li>
+          <li>Covers token efficiency — the real cost of running many agents versus one.</li>
+        </ul>
+
+        <h3>11. Silicon &amp; Hardware Layers</h3>
+        <ul>
+          <li>Covers the hardware stack underneath training and inference: GPUs, HBM, SRAM, and specialized chips like Groq's LPU.</li>
+          <li>Covers memory bandwidth as a bottleneck distinct from raw compute.</li>
+          <li>Covers the math connecting model size to hardware footprint and throughput.</li>
+        </ul>
+
+        <h3>12. Lithography &amp; Supply Chains</h3>
+        <ul>
+          <li>Covers the physical supply chain behind chip production: ASML's lithography equipment, TSMC's fabrication, and advanced packaging like CoWoS.</li>
+          <li>Covers where compute bottlenecks actually originate in that chain.</li>
+          <li>Covers the physics constraints shaping the next generation of chip manufacturing.</li>
+        </ul>
+
+        <h3>13. KV Cache Optimization</h3>
+        <ul>
+          <li>Covers the key-value cache that lets transformer inference avoid recomputing attention at every step.</li>
+          <li>Covers the memory math behind maintaining that cache over long contexts.</li>
+          <li>Covers compression, slicing, and offloading techniques used to keep cache size manageable.</li>
+        </ul>
+
+        <h3>14. Quantization &amp; Kernel Execution</h3>
+        <ul>
+          <li>Covers quantization formats like GGUF, AWQ, and EXL2 that shrink model size by reducing numeric precision.</li>
+          <li>Covers 4-bit methods specifically as the current practical floor for most deployment.</li>
+          <li>Covers the scale/zero-point math and the kernels that execute quantized operations efficiently.</li>
+        </ul>
+
+        <h3>15. AI Economics &amp; SaaS</h3>
+        <ul>
+          <li>Covers "neoclouds" and the capital expenditure driving new AI-specific cloud providers.</li>
+          <li>Covers monetization models for AI products, from usage-based pricing to subscriptions.</li>
+          <li>Covers datacenter ROI and token economics as the financial logic underneath the industry.</li>
+        </ul>
+
+        <h3>16. Geopolitics &amp; Labor</h3>
+        <ul>
+          <li>Covers export controls as a lever governments use to control who gets access to frontier compute.</li>
+          <li>Covers robotics and deployment as the physical extension of AI capability into the real world.</li>
+          <li>Covers the automation-versus-augmentation debate and what "AI readiness" means for a workforce.</li>
+        </ul>
+
+        <p>Stated outcome of the roadmap: understand the AI stack end-to-end — models, systems, hardware, economics, and society. On a skim, the weak spots are training methodology (no dedicated session on RLHF, DPO, or instruction tuning), data curation, and alignment/interpretability — all bigger gaps than the roadmap's length would suggest. But as a map for self-study, especially the agent-engineering and hardware/economics sections, it's more useful than most.</p>
+      </template>
+    </article>
+
+  </section>
+
+  <p class="empty-state" id="wishlist-empty-state" hidden>No wishlist items match your filters. Try clearing a filter or adjusting your search.</p>
+
+  </div>
+
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>Pipsy — a private research journal. Add new notes by copying a card block in <code>index.html</code>.</p>
+    <p>Pipsy — a private research journal. Add new notes by copying a card block in <code>index.html</code>. The Wishlist tab holds things worth exploring but not yet written up as full notes.</p>
   </div>
 </footer>
 
