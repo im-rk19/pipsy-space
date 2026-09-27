@@ -1,0 +1,37 @@
+{
+  "notes": [
+    {
+      "year": "2015",
+      "industry": "fmcg",
+      "geography": "india",
+      "author": "R. Krishnan",
+      "date": "12 Mar 2015",
+      "search": "territory mapping distribution sales fmcg india route to market rtm van sales beat plan secondary sales",
+      "title": "Territory Mapping in Indian FMCG Distribution",
+      "summary": "A look at how regional FMCG distributors carved sales territories in the mid-2010s, and why the shift from tenure-based beat plans to demand-density mapping changed how field sales teams were sized and compensated.",
+      "body": "[Placeholder text — replace with your research.] Through the early 2010s, most Indian FMCG distributors assigned sales territories the same way their predecessors had for decades: by geography and tenure, with senior salesmen inheriting the busiest routes regardless of how demand had actually shifted. By 2015, a handful of larger distribution houses began experimenting with demand-density mapping — using outlet-level sales history to redraw \"beats\" (daily sales routes) around actual purchase volume rather than road distance.\n\nThis note sketches out the mechanics of a beat plan: how many outlets a salesman on foot versus a van-based salesman could realistically cover in a day, how secondary sales data (distributor-to-retailer, as opposed to company-to-distributor) was used to flag under-served pockets, and why frequency of visit mattered more than territory size for perishable and high-turnover categories.\n\nOpen questions for further research: how did the shift affect salesman compensation structures built around fixed territories, and what happened to relationship-based selling once beats were redrawn purely on volume?"
+    },
+    {
+      "year": "2008",
+      "industry": "automotive",
+      "geography": "global",
+      "author": "R. Krishnan",
+      "date": "26 Mar 2008",
+      "search": "tata motors jaguar land rover acquisition ford automotive turnaround corporate history luxury brand",
+      "title": "The Tata–Jaguar Land Rover Acquisition: A Turnaround Case Study",
+      "summary": "Notes on Tata Motors' $2.3B purchase of Jaguar and Land Rover from Ford, made at the peak of a global credit crunch, and the operational bets that turned two loss-making British marques profitable within a few years.",
+      "body": "[Placeholder text — replace with your research.] In March 2008, Tata Motors completed its acquisition of Jaguar and Land Rover from Ford Motor Company for roughly $2.3 billion — a deal struck months before the global financial crisis made credit for large acquisitions far harder to come by. Ford had bought Jaguar in 1989 and Land Rover in 2000, and by the mid-2000s both brands were losing money under a parent company distracted by its own restructuring.\n\nThis note tracks the early operating decisions that are usually credited with the turnaround: giving JLR's UK engineering and design teams operational independence rather than folding them into Tata's existing structure, continued investment in new platforms even through the 2009 downturn, and a deliberate push into the Chinese market that Ford had underexploited.\n\nWorth researching further: how the deal was financed given the timing, and how much of the eventual profitability is attributable to product decisions versus the broader luxury SUV market recovery post-2010."
+    },
+    {
+      "year": "1971",
+      "industry": "tech",
+      "geography": "usa",
+      "author": "R. Krishnan",
+      "date": "15 Nov 1971",
+      "search": "intel 4004 microprocessor mainframe history semiconductor silicon valley computing hardware",
+      "title": "From Mainframes to Microprocessors: Intel's 1971 Pivot",
+      "summary": "How a calculator contract for a Japanese client led Intel to build the 4004, the first commercial single-chip microprocessor, and why the company almost didn't realize what it had made.",
+      "body": "[Placeholder text — replace with your research.] In 1969, Japanese calculator maker Busicom commissioned Intel to design a set of chips for a new line of calculators. Rather than building the twelve custom chips Busicom had specified, Intel engineer Ted Hoff proposed a more general design: a single programmable logic chip that could be configured in software to perform different calculator functions, paired with memory chips.\n\nThe result, released commercially in November 1971 as the Intel 4004, is widely regarded as the first commercially available single-chip microprocessor. It was not originally built with general-purpose computing in mind — Intel's leadership at the time saw the company's future in memory chips, not processors, and it took internal negotiation for Intel to buy back the rights to market the 4004 to other customers, since Busicom's original contract gave them exclusivity.\n\nThis note is a starting point for tracing how the 4004's architecture influenced the 8008 and 8080, and eventually the x86 line that would define desktop computing for the next four decades."
+    }
+  ]
+}

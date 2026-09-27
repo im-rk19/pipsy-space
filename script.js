@@ -1,14 +1,16 @@
 /* ==========================================================================
    Pipsy — search, filter, and modal logic.
-   No frameworks, no build step. Reads note data straight from the
-   data-* attributes on each .note-card in index.html.
+   No frameworks, no build step. Notes are fetched from notes.json at load
+   time and rendered into .note-card elements with the same data-* attributes
+   the rest of this file always expected; everything below this point is
+   unchanged from the original hand-authored version.
    ========================================================================== */
 
 (function () {
   "use strict";
 
   var grid = document.getElementById("note-grid");
-  var cards = Array.prototype.slice.call(grid.querySelectorAll(".note-card"));
+  var cards = [];
   var searchInput = document.getElementById("search-input");
   var resultCount = document.getElementById("result-count");
   var emptyState = document.getElementById("empty-state");
@@ -48,6 +50,56 @@
         return word.charAt(0).toUpperCase() + word.slice(1);
       })
       .join(" ");
+  }
+
+  function renderCard(note) {
+    var card = document.createElement("article");
+    card.className = "note-card";
+    card.setAttribute("data-year", note.year || "");
+    card.setAttribute("data-industry", note.industry || "");
+    card.setAttribute("data-geography", note.geography || "");
+    card.setAttribute("data-author", note.author || "");
+    card.setAttribute("data-date", note.date || "");
+    card.setAttribute("data-search", note.search || "");
+
+    var badges = document.createElement("div");
+    badges.className = "card-badges";
+    [["industry", note.industry], ["geography", note.geography], ["year", note.year]].forEach(function (pair) {
+      if (!pair[1]) return;
+      var badge = document.createElement("span");
+      badge.className = "badge badge-" + pair[0];
+      badge.textContent = formatLabel(pair[1]);
+      badges.appendChild(badge);
+    });
+    card.appendChild(badges);
+
+    var title = document.createElement("h2");
+    title.className = "card-title";
+    title.textContent = note.title || "";
+    card.appendChild(title);
+
+    var byline = document.createElement("p");
+    byline.className = "card-byline";
+    byline.textContent = [note.author, note.date].filter(Boolean).join(" · ");
+    card.appendChild(byline);
+
+    var summary = document.createElement("p");
+    summary.className = "card-summary";
+    summary.textContent = note.summary || "";
+    card.appendChild(summary);
+
+    var template = document.createElement("template");
+    template.className = "card-body";
+    var paragraphs = (note.body || "").split(/\n\s*\n/);
+    paragraphs.forEach(function (para) {
+      if (!para.trim()) return;
+      var p = document.createElement("p");
+      p.textContent = para.trim();
+      template.content.appendChild(p);
+    });
+    card.appendChild(template);
+
+    return card;
   }
 
   function buildChips() {
@@ -198,7 +250,7 @@
     }
   }
 
-  cards.forEach(function (card) {
+  function wireCard(card) {
     card.setAttribute("tabindex", "0");
     card.setAttribute("role", "button");
     card.addEventListener("click", function () {
@@ -210,7 +262,7 @@
         openModal(card);
       }
     });
-  });
+  }
 
   modalClose.addEventListener("click", closeModal);
   overlay.addEventListener("click", function (e) {
@@ -225,6 +277,26 @@
   searchInput.addEventListener("input", applyFilters);
   clearBtn.addEventListener("click", clearAllFilters);
 
-  buildChips();
-  applyFilters();
+  fetch("notes.json", { cache: "no-store" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("notes.json failed to load: " + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      var notes = (data && data.notes) || [];
+      notes.forEach(function (note) {
+        var card = renderCard(note);
+        wireCard(card);
+        grid.appendChild(card);
+        cards.push(card);
+      });
+      buildChips();
+      applyFilters();
+    })
+    .catch(function (err) {
+      resultCount.textContent = "Could not load notes.";
+      emptyState.hidden = false;
+      emptyState.textContent = "Failed to load notes.json — check the console for details.";
+      console.error(err);
+    });
 })();
