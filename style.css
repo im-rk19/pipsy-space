@@ -67,6 +67,20 @@ a {
   padding: 48px 0 32px;
 }
 
+.brand-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .wordmark {
   font-family: var(--font-serif);
   font-weight: 700;
