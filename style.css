@@ -5,15 +5,15 @@
    ========================================================================== */
 
 :root {
-  --bg: #faf7f2;
+  --bg: #fbeaee;
   --surface: #ffffff;
   --ink: #26231d;
-  --ink-muted: #736c5e;
-  --ink-faint: #a39c8c;
-  --border: #e6dfd2;
+  --ink-muted: #8c6b6d;
+  --ink-faint: #ab8f92;
+  --border: #efd4d9;
   --accent: #9a4b32;
   --accent-ink: #ffffff;
-  --accent-tint: #f3e3db;
+  --accent-tint: #f3ddd3;
   --focus: #4a6b63;
 
   --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
@@ -262,7 +262,7 @@ a {
 
 .badge-geography,
 .badge-year {
-  background: #f0efe9;
+  background: #f1e5e2;
   color: var(--ink-muted);
 }
 
