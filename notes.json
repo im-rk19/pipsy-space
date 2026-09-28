@@ -39,17 +39,6 @@
       "geography": "global",
       "author": "R. Krishnan",
       "date": "28 Sept 2026",
-      "search": "",
-      "title": "Pipsy MCP connector: live test",
-      "summary": "A test note confirming the pipsy-mcp connector can publish directly from a Claude conversation to the live site.",
-      "body": "This note was published by Claude via the pipsy-mcp remote MCP server, confirming the full pipeline works end-to-end: Claude → Cloudflare Worker → GitHub Contents API → notes.json → pipsy.space.\n\nFeel free to delete this entry from notes.json once confirmed."
-    },
-    {
-      "year": "2026",
-      "industry": "tech",
-      "geography": "global",
-      "author": "R. Krishnan",
-      "date": "28 Sept 2026",
       "search": "nodejs javascript cloudflare workers ai agents tooling model context protocol",
       "title": "npm, npx, and Building a Remote MCP Connector for Your Own Site",
       "summary": "npm is Node.js's package manager and registry; npx runs a package's command without a permanent global install. Together they're the on-ramp for standing up a Model Context Protocol (MCP) server — a small, typed API that lets any AI agent call real actions on your own website, not just read or write text. This note walks through both tools and uses the pipsy-mcp server (the one publishing this very note) as the worked example.",
