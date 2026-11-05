@@ -4,76 +4,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pipsy — Research Archive</title>
-<meta name="description" content="Pipsy is a personal research archive of tagged notes.">
+<meta name="description" content="Pipsy is a personal research archive of notes and PDFs on business, history and technology.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/image.png">
 </head>
 <body>
 
-<header class="site-header">
+<header class="masthead">
   <div class="wrap">
-    <div class="brand-row">
-      <img src="assets/image.png" alt="Pipsy" class="site-logo">
-      <h1 class="wordmark">Pipsy</h1>
-    </div>
-    <p class="tagline">A personal research archive of tagged notes</p>
+    <a class="brand" href="#/" aria-label="Pipsy, back to all notes">
+      <img src="assets/image.png" alt="" class="brand-logo" width="48" height="48">
+      <span class="brand-text">
+        <span class="wordmark">Pipsy</span>
+        <span class="tagline">A research archive of notes and PDFs</span>
+      </span>
+    </a>
+    <nav class="timeline" id="timeline" aria-label="Browse notes by year"></nav>
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="app">
 
-  <section class="controls" aria-label="Search and filter notes">
-    <div class="search-row">
-      <label class="visually-hidden" for="search-input">Search notes</label>
-      <input type="search" id="search-input" placeholder="Search by title, summary, or keyword…" autocomplete="off">
-      <p class="count" id="result-count" aria-live="polite"></p>
+  <!-- Catalogue view -->
+  <div id="view-list">
+    <div class="layout">
+      <details class="filters-panel" id="filters-panel">
+        <summary>Filters</summary>
+        <div class="filter-groups" id="filter-groups">
+          <div class="filter-group">
+            <h2 class="filter-label">Industry</h2>
+            <div class="filter-list" id="industry-chips" data-filter-key="industry"></div>
+          </div>
+          <div class="filter-group">
+            <h2 class="filter-label">Geography</h2>
+            <div class="filter-list" id="geography-chips" data-filter-key="geography"></div>
+          </div>
+          <div class="filter-group">
+            <h2 class="filter-label">Type</h2>
+            <div class="filter-list" id="type-chips" data-filter-key="type"></div>
+          </div>
+        </div>
+      </details>
+
+      <section class="catalogue" aria-label="Research notes">
+        <div class="toolbar">
+          <label class="visually-hidden" for="search-input">Search notes</label>
+          <input type="search" id="search-input" placeholder="Search titles, summaries and text" autocomplete="off">
+          <p class="count" id="result-count" aria-live="polite"></p>
+          <button type="button" id="clear-filters" class="clear-btn" hidden>Clear filters</button>
+        </div>
+        <div id="catalogue"></div>
+        <p class="empty-state" id="empty-state" hidden>No notes match. Clear a filter or change the search.</p>
+      </section>
     </div>
+  </div>
 
-    <div class="filter-groups" id="filter-groups">
-      <div class="filter-group">
-        <span class="filter-label">Year</span>
-        <div class="chip-row" id="year-chips" data-filter-key="year"></div>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Industry</span>
-        <div class="chip-row" id="industry-chips" data-filter-key="industry"></div>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Geography</span>
-        <div class="chip-row" id="geography-chips" data-filter-key="geography"></div>
-      </div>
-      <button type="button" id="clear-filters" class="clear-btn" hidden>Clear all filters</button>
-    </div>
-  </section>
-
-  <section class="grid" id="note-grid" aria-label="Research notes">
-    <!-- Cards are rendered here at load time from notes.json.
-         Add/edit notes via the CMS at /admin, or edit notes.json directly. -->
-  </section>
-
-  <p class="empty-state" id="empty-state" hidden>No notes match your filters. Try clearing a filter or adjusting your search.</p>
+  <!-- Single note / series view -->
+  <div id="view-note" hidden></div>
 
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>Pipsy — a private research journal. Add new notes via the <a href="/admin/">editor</a>.</p>
+    <p>Pipsy is a private research journal. Add new notes through the <a href="/admin/">editor</a>.</p>
   </div>
 </footer>
-
-<div class="modal-overlay" id="modal-overlay" hidden>
-  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
-    <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-    <div class="modal-badges" id="modal-badges"></div>
-    <h2 class="modal-title" id="modal-title"></h2>
-    <p class="modal-byline" id="modal-byline"></p>
-    <div class="modal-body" id="modal-body"></div>
-  </div>
-</div>
 
 <script src="script.js"></script>
 </body>
