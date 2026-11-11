@@ -204,6 +204,21 @@
   },
   {
    "year": "2026",
+   "industry": "tech",
+   "geography": "global",
+   "author": "Isagi",
+   "date": "12 Nov 2026",
+   "title": "Cloud, Distributed Systems and Reliability: Building Things That Stay Up",
+   "part": 7,
+   "search": "btech cce revision series cloud computing software reliability distributed systems iaas paas saas serverless faas baas aws gcp azure shared responsibility regions availability zones ec2 lambda cloud run s3 object storage managed database queue sqs pub/sub dead letter queue event bus kafka cache iam containers kubernetes orchestration infrastructure as code terraform ci/cd github actions rolling blue-green canary feature flags twelve-factor partial failure network partition clock fallacies consensus raft paxos consistency eventual consistency linearizability cap pacelc read your writes idempotency idempotency key retries exponential backoff jitter retry storm circuit breaker bulkhead timeouts availability nines sli slo sla error budget p99 latency mtbf mttr bathtub curve observability logs metrics traces opentelemetry four golden signals alerting sentry graceful degradation load shedding redundancy rpo rto chaos engineering incident commander blameless post-mortem cloud cost egress finops llm cost unit economics",
+   "summary": "Part 7 of the B.Tech CCE revision series: where scaling, automation and agents actually run, and how they fail. Cloud service models and building blocks (with queues in depth), containers and CI/CD, why distributed systems are hard, consistency and CAP, idempotency and retries done right, the nines, SLOs and error budgets, logs, metrics and traces, graceful degradation and incidents, and what makes cloud bills blow up. Includes five labs (retry code tested) and 15 self-check questions with answers.",
+   "body": "WHAT THIS PDF IS\n\nPart 7 of the B.Tech CCE revision series, covering Cloud Computing and Software Reliability, plus the distributed-systems ideas that connect them. It focuses on the failures that don't happen on a laptop: timeouts that actually succeeded, retries that charge twice, region outages and runaway bills.\n\nWHAT IT COVERS\n\n- Service models from IaaS to SaaS, shared responsibility, regions and availability zones.\n- The dozen cloud building blocks with AWS and GCP names, and queues in depth (decoupling, smoothing spikes, dead-letter queues, at-least-once delivery).\n- Containers, orchestration and when not to use Kubernetes, infrastructure as code, CI/CD, rolling, blue-green and canary releases, feature flags.\n- Why distributed systems are hard: partial failure, unreliable networks, no shared clock, the fallacies, consensus; a worked double-charge example.\n- Consistency models, CAP and PACELC, with a table of which data needs what.\n- Idempotency keys, timeouts, safe retries, exponential backoff with jitter, retry budgets, circuit breakers, bulkheads.\n- Availability and the nines, dependency multiplication, SLIs, SLOs, SLAs and error budgets, tail latency, and the classical reliability measures (MTBF, MTTR, bathtub curve).\n- Observability: logs, metrics and traces, the four golden signals, alerting, error tracking, LLM call logging.\n- Fault tolerance, graceful degradation, load shedding, backups, RPO and RTO, chaos engineering, incident handling and blameless post-mortems.\n- Cloud cost culprits and guards, and LLM unit economics.\n\nHOW THE PDF IS BUILT\n\n- Thirteen sections, each opening with a one-line summary, with comparison tables throughout.\n- Five labs: deploying and breaking a small observable service, retries and idempotency (tested), a miniature queue with a dead-letter list, writing an SLO, and a cost model.\n- Fifteen self-check questions with answers, and a short resource list.\n\nSOURCES NOTE\n\nWritten from general knowledge of the field. The reliability material follows Google's SRE books; the distributed-systems material follows Kleppmann's Designing Data-Intensive Applications; the retry guidance follows the Amazon Builders' Library.",
+   "pdf": "pdfs/btech-cce-revision-7-cloud-distributed-systems-reliability.pdf",
+   "pages": 15,
+   "series": "B.Tech CCE Revision"
+  },
+  {
+   "year": "2026",
    "industry": "automotive",
    "geography": "india",
    "author": "Isagi",
