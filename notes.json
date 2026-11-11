@@ -249,6 +249,21 @@
   },
   {
    "year": "2026",
+   "industry": "tech",
+   "geography": "global",
+   "author": "Isagi",
+   "date": "12 Nov 2026",
+   "title": "Programming Basics for Reading and Reviewing Code",
+   "part": 10,
+   "search": "btech cce revision series programming basics problem solving object oriented programming oop data structures algorithms design and analysis of algorithms python javascript compiled interpreted static dynamic typing paradigms procedural functional references mutability floating point money none null unicode utf-8 functions pure functions scope default argument exceptions error handling async await class object encapsulation inheritance polymorphism abstraction interface protocol dataclass composition list array hash map dict set linked list stack queue deque heap priority queue tree b-tree graph trie membership big-o complexity constant logarithmic linear quadratic exponential recursion base case stack overflow memoisation dynamic programming binary search sorting bfs dfs dijkstra topological sort greedy edit distance np-hard code review checklist ai-generated code hallucinated api git commit branch pull request",
+   "summary": "Part 10 of the B.Tech CCE revision series: enough programming to read, review and direct AI-written code. How programs are built, references and mutability, functions and errors, object-oriented design with a worked rubric example, data structures and their costs, Big-O intuition, recursion and memoisation, the algorithms worth recognising, and a checklist for reviewing code with AI-specific red flags. Includes five labs (code tested) and 14 self-check questions with answers.",
+   "body": "WHAT THIS PDF IS\n\nPart 10 and the last of the B.Tech CCE revision series, covering Problem Solving Using Computers, Object Oriented Programming, Data Structures, and Design and Analysis of Algorithms. It skips problem-grinding on purpose: the aim is to read code, judge whether it is sensible, spot when it will be slow or wrong, and tell an AI or an engineer precisely what to change.\n\nWHAT IT COVERS\n\n- How programs are built: building blocks, compiled vs interpreted, static vs dynamic typing, paradigms.\n- Values and references, mutability, floating point and money, None, Unicode.\n- Functions, scope, the default-argument trap, exceptions and what to look for in error handling, async pitfalls.\n- Object-oriented programming: classes, encapsulation, inheritance, polymorphism and interfaces, with a runnable example of swappable scoring rubrics; composition over inheritance.\n- A table of data structures with what each is fast and slow at, and the list-membership performance bug.\n- Big-O shapes, hidden loops, why I/O dominates.\n- Recursion, base cases, stack limits, memoisation and dynamic programming.\n- Algorithms worth recognising: search, sorting, hashing, sliding windows, BFS, DFS, Dijkstra, topological sort, greedy, edit distance, NP-hard problems.\n- How to read unfamiliar code, a nine-point review checklist, red flags in AI-written code, and Git basics.\n\nHOW THE PDF IS BUILT\n\n- Twelve sections, each opening with a one-line summary, with comparison tables and short Python examples.\n- Five labs: predicting output, timing Big-O, extending the rubric classes, reviewing AI-written code, and recursion with memoisation. The code was run and works.\n- Fourteen self-check questions with answers, and a short resource list.\n\nSOURCES NOTE\n\nWritten from general knowledge of the field. Resources include CS50, Grokking Algorithms and Google's code review guidelines.",
+   "pdf": "pdfs/btech-cce-revision-10-programming-basics.pdf",
+   "pages": 15,
+   "series": "B.Tech CCE Revision"
+  },
+  {
+   "year": "2026",
    "industry": "automotive",
    "geography": "india",
    "author": "Isagi",
