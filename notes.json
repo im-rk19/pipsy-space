@@ -159,6 +159,21 @@
   },
   {
    "year": "2026",
+   "industry": "tech",
+   "geography": "global",
+   "author": "Isagi",
+   "date": "12 Nov 2026",
+   "title": "Databases and Data Systems: Schemas, Indexes, Transactions and Choosing a Store",
+   "part": 4,
+   "search": "btech cce revision series database systems dbms sql relational model postgres postgresql mysql sqlite joins normalisation normalization denormalisation schema design primary key foreign key constraints index b-tree composite index explain query plan n+1 transactions acid isolation levels read committed serializable snapshot mvcc lost update write skew write-ahead log wal buffer pool row store column store oltp olap lsm nosql mongodb redis dynamodb cassandra elasticsearch vector database pgvector hnsw embeddings caching cache invalidation replication replica lag failover sharding partitioning warehouse bigquery snowflake clickhouse duckdb etl elt cdc event data tracking plan star schema",
+   "summary": "Part 4 of the B.Tech CCE revision series: what decides whether a product's data layer works. The relational model and SQL, schema design with a worked example for a speaking-practice app, indexes and query plans, transactions, isolation levels and their anomalies, storage internals, SQL vs NoSQL vs vector stores, caching, replication and sharding, and warehouses and event data. Includes five SQLite labs (tested) and 14 self-check questions with answers.",
+   "body": "WHAT THIS PDF IS\n\nPart 4 of the B.Tech CCE revision series, covering Database Systems and the storage side of Data Mining. Databases were already a comfortable subject, so this part moves quickly over the basics and spends its time on schema design, indexes, transactions and choosing the right kind of store.\n\nWHAT IT COVERS\n\n- What a database gives you that files don't.\n- The relational model, SQL's logical reading order, joins and NULLs.\n- Normalisation and deliberate denormalisation, with a full schema for users, sessions and rubric scores (audio in object storage, scores as rows, scorer versioning, constraints).\n- Indexes: B-trees, composite index column order, when indexes don't help, EXPLAIN, the N+1 problem.\n- Transactions and ACID, the write-ahead log, an atomic booking example.\n- Isolation levels and the anomalies each prevents, MVCC.\n- Storage internals: pages and buffer pools, row vs column stores, LSM trees, connection pooling.\n- A comparison of relational, document, key-value, wide-column, search, graph, vector and warehouse stores; when pgvector is enough.\n- Caching patterns, invalidation and stampedes; replication, lag and failover; sharding and shard keys.\n- Operational databases vs warehouses, ETL and CDC, event data, tracking plans and star schemas.\n\nHOW THE PDF IS BUILT\n\n- Fourteen sections, each opening with a one-line summary, with comparison tables throughout.\n- Five labs using Python's built-in sqlite3: building the schema and testing constraints, watching an index change a query plan (a full scan of a million rows drops to an index search), breaking and fixing a transaction, analytics queries, and writing a tracking plan. The code was run and works.\n- Fourteen self-check questions with answers, and a short resource list.\n\nSOURCES NOTE\n\nWritten from general knowledge of the field. The structure draws on Kleppmann's Designing Data-Intensive Applications, CMU 15-445 and Use the Index, Luke.",
+   "pdf": "pdfs/btech-cce-revision-4-databases-and-data-systems.pdf",
+   "pages": 16,
+   "series": "B.Tech CCE Revision"
+  },
+  {
+   "year": "2026",
    "industry": "automotive",
    "geography": "india",
    "author": "Isagi",
