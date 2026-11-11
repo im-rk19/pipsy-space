@@ -129,6 +129,21 @@
   },
   {
    "year": "2026",
+   "industry": "tech",
+   "geography": "global",
+   "author": "Isagi",
+   "date": "12 Nov 2026",
+   "title": "Networks and the Web: How Data Actually Moves",
+   "part": 2,
+   "search": "btech cce revision series networks networking computer network protocols data communication network programming tcp udp quic ip ipv4 ipv6 subnet cidr nat routing bgp dns http https tls certificates sockets websocket server sent events load balancer cdn proxy rate limiting latency bandwidth wifi 4g 5g cellular osi layers mac arp mtu shannon modulation curl dig traceroute",
+   "summary": "Part 2 of the B.Tech CCE revision series: how data moves from one program to another across the internet. Layers, signals and bandwidth, Ethernet and Wi-Fi, IP addressing and subnets, NAT and routing, TCP, UDP and QUIC, DNS, HTTP, TLS, sockets and streaming, and the load balancers, CDNs and proxies in front of every real deployment. Includes worked examples, seven labs, a troubleshooting playbook and 16 self-check questions with answers.",
+   "body": "WHAT THIS PDF IS\n\nPart 2 of the B.Tech CCE revision series, covering the networking subjects on the marksheet: Computer Network Protocols, Principles of Data Communication, Network Programming, Advanced Communication Networks and Wireless Communication. The goal is to explain each idea in a minute or two and reason about it when something breaks, not to solve exam problems.\n\nWHAT IT COVERS\n\n- Latency vs bandwidth, and why the speed of light sets a floor on every round trip.\n- The layer model and encapsulation, with a diagram.\n- Data communication: modulation, Shannon's limit, multiplexing, the four kinds of delay.\n- Link layer: MAC addresses, switches, ARP, Wi-Fi, VLANs, MTU.\n- IP: addresses, CIDR subnets, private ranges, NAT and carrier-grade NAT, routing and BGP.\n- Transport: TCP (handshake, flow and congestion control, head-of-line blocking), UDP and QUIC.\n- DNS, HTTP (methods, status codes, cookies, REST, versions 1.1 to 3) and TLS certificates.\n- Network programming: sockets, framing, timeouts, pooling, SSE and WebSockets, streaming for AI products.\n- The plumbing: reverse proxies, load balancers, CDNs, gateways, firewalls, rate limits and backoff, Wi-Fi and cellular.\n\nHOW THE PDF IS BUILT\n\n- Fourteen sections, each opening with a one-line summary.\n- Worked examples: upload time on 4G, subnet membership, TCP slow start on a long path, the bandwidth-delay product.\n- Seven hands-on labs (curl, dig, browser DevTools, Python subnet checks, an asyncio echo server, ping and traceroute, tracing an upload). The Python code was run and works.\n- A symptom-by-symptom troubleshooting table.\n- Sixteen self-check questions with answers, and a short resource list.\n\nSOURCES NOTE\n\nWritten from general knowledge of the field. The structure follows the top-down approach of Kurose and Ross; the latency material draws on Grigorik's High Performance Browser Networking.",
+   "pdf": "pdfs/btech-cce-revision-2-networks-and-the-web.pdf",
+   "pages": 18,
+   "series": "B.Tech CCE Revision"
+  },
+  {
+   "year": "2026",
    "industry": "automotive",
    "geography": "india",
    "author": "Isagi",
