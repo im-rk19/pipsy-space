@@ -174,6 +174,21 @@
   },
   {
    "year": "2026",
+   "industry": "tech",
+   "geography": "global",
+   "author": "Isagi",
+   "date": "12 Nov 2026",
+   "title": "Machine Learning, Data Mining and Predictive Analysis: From Bayes to Agents",
+   "part": 5,
+   "search": "btech cce revision series machine learning ml data mining predictive analysis pattern recognition engineering mathematics linear algebra vector matrix dot product cosine similarity probability statistics distribution variance bayes base rate hypothesis testing p-value confidence interval correlation causation derivative gradient gradient descent supervised unsupervised self-supervised reinforcement learning classification regression train validation test cross-validation overfitting underfitting bias variance regularisation data leakage confusion matrix precision recall f1 roc auc pr auc calibration mae rmse linear regression logistic regression knn naive bayes decision tree random forest gradient boosting xgboost svm shap feature engineering drift fairness clustering k-means dbscan association rules apriori support confidence lift anomaly detection isolation forest pca t-sne umap time series forecasting neural network backpropagation activation relu loss adam cnn rnn lstm transformer attention tokens embeddings pretraining fine-tuning rlhf hallucination rag agents evals scikit-learn",
+   "summary": "Part 5 of the B.Tech CCE revision series: the maths that carries weight (vectors, Bayes, gradients), how models learn and how to judge them (overfitting, leakage, precision and recall), the classic algorithms and when to use each, data mining (clustering, association rules, anomalies, PCA), neural networks and backpropagation, and how LLMs and agents sit on top. Includes five labs (scikit-learn code tested) and 15 self-check questions with answers.",
+   "body": "WHAT THIS PDF IS\n\nPart 5 of the B.Tech CCE revision series, covering Data Mining and Predictive Analysis, Pattern Recognition, and the parts of Engineering Mathematics that matter for ML. It builds the foundation under the LLM material in Part 1, so that terms like overfitting, precision, embeddings and gradient descent become tools rather than vocabulary. No derivations.\n\nWHAT IT COVERS\n\n- Maths: vectors, matrices and cosine similarity; distributions, Bayes' rule and base rates, hypothesis tests, correlation vs causation; derivatives, gradients and gradient descent.\n- Types of learning; the standard ML workflow.\n- Generalisation: splits, cross-validation, overfitting, bias and variance, regularisation, and data leakage.\n- Evaluation: the confusion matrix, precision, recall, F1, ROC and PR curves, calibration, regression metrics, and evaluating LLM outputs.\n- A comparison table of classic models, baselines and SHAP.\n- Feature engineering, missing values, imbalance, label quality, drift and fairness.\n- Data mining and pattern recognition: k-means, hierarchical and DBSCAN clustering; association rules with support, confidence and lift; anomaly detection; PCA, t-SNE and UMAP; classical pattern recognition; forecasting.\n- Neural networks: neurons, layers, loss, backpropagation, the training loop, CNNs, RNNs and transformers.\n- LLMs: tokens, embeddings, attention, pretraining and post-training, hallucination, prompting vs RAG vs fine-tuning.\n- Agents from an ML point of view: compounding errors, evals, distribution shift.\n\nHOW THE PDF IS BUILT\n\n- Thirteen sections, each opening with a one-line summary, with worked examples (a Bayes base-rate calculation, compounding agent error) and comparison tables.\n- Five labs: an end-to-end classifier against a baseline, visible overfitting, clustering, Bayes by hand, and measuring LLM scoring consistency. The scikit-learn code was run and works.\n- Fifteen self-check questions with answers, and a short resource list.\n\nSOURCES NOTE\n\nWritten from general knowledge of the field. The structure follows An Introduction to Statistical Learning; the neural network and LLM material follows Karpathy's and 3Blue1Brown's explanations; the agent points draw on Anthropic's 'Building effective agents'.",
+   "pdf": "pdfs/btech-cce-revision-5-ml-data-mining-predictive-analysis.pdf",
+   "pages": 15,
+   "series": "B.Tech CCE Revision"
+  },
+  {
+   "year": "2026",
    "industry": "automotive",
    "geography": "india",
    "author": "Isagi",
