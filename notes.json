@@ -144,6 +144,21 @@
   },
   {
    "year": "2026",
+   "industry": "tech",
+   "geography": "global",
+   "author": "Isagi",
+   "date": "12 Nov 2026",
+   "title": "Computer Organisation and Operating Systems: From Gates to Containers",
+   "part": 3,
+   "search": "btech cce revision series computer organisation organization architecture digital systems logic gates nand transistor binary two's complement flip flop clock cpu alu registers instruction cycle isa x86 arm pipelining cores gpu simd embedded microcontroller memory hierarchy cache ram ssd locality operating system kernel user mode process thread gil scheduling context switch virtual memory paging page table page fault swap thrashing oom killer exit 137 concurrency race condition mutex lock deadlock async event loop system call file descriptor file system inode fsync permissions container docker namespaces cgroups virtual machine hypervisor",
+   "summary": "Part 3 of the B.Tech CCE revision series: how a computer works from logic gates up, and what the operating system does to share it among many programs. Gates and binary, the CPU's instruction cycle, GPUs, the memory hierarchy and caching, processes and threads, scheduling, virtual memory, race conditions, locks and async, system calls and files, and how containers differ from virtual machines. Includes six labs with tested Python code and 14 self-check questions with answers.",
+   "body": "WHAT THIS PDF IS\n\nPart 3 of the B.Tech CCE revision series, covering Digital Systems, Computer Organisation, Operating Systems and the useful parts of Embedded Systems. Operating systems tend to feel intimidating because of exam-style tracing; this part keeps to the ideas, which are few and explain a lot of everyday engineering: out-of-memory crashes, data corrupted by two requests at once, why containers start in a second, why async exists.\n\nWHAT IT COVERS\n\n- Transistors, logic gates, binary and hex, combinational vs sequential circuits, the clock.\n- The CPU: registers, ALU, instruction cycle, x86 vs ARM, pipelining, cores, why AI runs on GPUs, microcontrollers.\n- The memory hierarchy with access times, locality, and caching as a principle that repeats across systems.\n- The operating system's three jobs, the kernel and privilege levels.\n- Processes vs threads, memory layout, leaks, Python's GIL.\n- Scheduling, context switches and load average.\n- Virtual memory, page faults, thrashing and the OOM killer.\n- Concurrency: race conditions, locks, deadlock, atomic operations, async vs threads.\n- System calls, file descriptors, file systems, fsync, permissions.\n- Virtual machines vs containers (namespaces, cgroups, images).\n\nHOW THE PDF IS BUILT\n\n- Thirteen sections, each opening with a one-line summary, with a memory-hierarchy diagram and comparison tables.\n- Six labs: watching processes, timing cache effects, causing and fixing a race condition, async vs sequential waiting, looking inside a Docker container, and building gates from NAND. The Python code was run and works.\n- Fourteen self-check questions with answers, and a short resource list.\n\nSOURCES NOTE\n\nWritten from general knowledge of the field. The OS sections follow the structure of Operating Systems: Three Easy Pieces (Arpaci-Dusseau); the hardware sections follow Nand2Tetris.",
+   "pdf": "pdfs/btech-cce-revision-3-computer-organisation-and-os.pdf",
+   "pages": 16,
+   "series": "B.Tech CCE Revision"
+  },
+  {
+   "year": "2026",
    "industry": "automotive",
    "geography": "india",
    "author": "Isagi",
