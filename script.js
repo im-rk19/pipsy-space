@@ -8,6 +8,8 @@
      pages   Page count of the PDF, shown on the page.
      series  Series name. When absent, titles like "Name 2/4 — Title" are
              grouped automatically.
+     site    Path or URL of a companion web page (e.g. "dm/"). Shown as a
+             button on the note page and on its series page.
    Pages use hash URLs (#/note/<slug>) so they work on GitHub Pages.
    ========================================================================== */
 
@@ -165,6 +167,7 @@
       searchExtra: raw.search || "",
       pdf: safePdfPath(raw.pdf),
       pages: raw.pages ? parseInt(raw.pages, 10) || null : null,
+      site: (typeof raw.site === "string" && /^(https:\/\/|[a-z0-9][a-z0-9\-\/]*\/?(\.html)?$)/i.test(raw.site)) ? raw.site : null,
       slug: raw.slug ? slugify(raw.slug) : slugify(raw.title || "note-" + index),
       seriesName: raw.series || null,
       part: raw.part ? parseInt(raw.part, 10) : null,
@@ -476,7 +479,8 @@
       el("h1", { class: "page-title", text: n.title }),
       el("p", { class: "page-byline", text: [n.author, n.date].filter(Boolean).join(", ") }),
       n.summary ? el("p", { class: "standfirst", text: n.summary }) : null,
-      n.pdf ? pdfBlock(n) : null
+      n.pdf ? pdfBlock(n) : null,
+      siteLink(n.site)
     ];
 
     if (n.body && n.body.trim()) {
@@ -513,6 +517,13 @@
     setPage(n.title, el("article", { class: "page" }, children));
   }
 
+  function siteLink(href) {
+    if (!href) return null;
+    return el("div", { class: "pdf-actions" }, [
+      el("a", { class: "btn btn-primary", href: href, target: "_blank", rel: "noopener", text: "Open the interactive study site" })
+    ]);
+  }
+
   function showSeries(slug) {
     var s = series[slug];
     if (!s) return showMissing();
@@ -530,6 +541,7 @@
       el("p", { class: "page-tags" }, [marker("series", s.parts.length + " parts")]),
       el("h1", { class: "page-title", text: s.name }),
       el("p", { class: "page-byline", text: [s.parts[0].author, s.parts[0].year].filter(Boolean).join(", ") }),
+      siteLink(s.parts.filter(function (p) { return p.site; }).map(function (p) { return p.site; })[0]),
       parts
     ]));
   }
